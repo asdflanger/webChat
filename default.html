@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>
+            MonkeyChat
+        </title>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+        <link rel="stylesheet" href="./css/estilos.css" />
+    </head>
+    <body>
+        <div id="UsuariosConectados">
+            <h4>Usuario Conectados</h4>
+            <input type="search" id="buscar" placeholder="Buscar Usuario" />
+            <ul id="usuarios">
+                <li class="group">Informatica
+                    <ul class="groupParent">
+                        <li><img class="statusImg" src="./imgs/idle_thumb.png" />Rodrigo Ivan Zayas Reyes</li>
+                        <li><img class="statusImg" src="./imgs/away_thumb.png" />Sebastian Langer</li>
+                        <li><img class="statusImg" src="./imgs/available_thumb.png" />Marcos Josias Maiz</li>
+                        <li><img class="statusImg" src="./imgs/disconnect_thumb.png" />Jean Marie Luis Marcel Rene Paul</li>
+                        <li><img class="statusImg" src="./imgs/away_thumb.png" />Inocencio Taboada</li>
+                    </ul>
+                </li>
+                <li class="group">RRHH
+                    <ul class="groupParent">
+                        <li><img class="statusImg" />Liz Lopez</li>
+                        <li><img class="statusImg" />Sonia Denois</li>
+                        <li><img class="statusImg" />Senaida Fernandez</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="chatWindow">
+        </div>
+        <div id="cahtOptions"></div>
+    </body>
+</html>

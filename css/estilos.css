@@ -1,0 +1,19 @@
+body {
+    font-family: 'Segoe UI Emoji','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+li {
+    max-width: 50%;
+}
+.statusImg {
+    width: 25px;
+    vertical-align: middle;
+    margin: 5px;
+}
+.groupParent > li:hover  {
+    background-color: lightgray;
+    cursor: pointer;
+}
