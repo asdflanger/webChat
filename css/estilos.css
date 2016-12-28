@@ -2,18 +2,322 @@ body {
     font-family: 'Segoe UI Emoji','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-ul {
-    list-style: none;
-}
-li {
-    max-width: 50%;
-}
-.statusImg {
-    width: 25px;
-    vertical-align: middle;
-    margin: 5px;
-}
-.groupParent > li:hover  {
-    background-color: lightgray;
+.hijos li:hover {
     cursor: pointer;
+    background-color: lightgrey;
+}
+
+.hijos li {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+div {
+}
+
+#mainMenu {
+    z-index: 1000;
+}
+/* resolucion menor a w480 (smartphones) */
+@media screen and (min-width: 425px) {
+    body {
+        font-size: 12pt;
+        background-color: yellow;
+    }
+
+    #activeChat {
+        font-size: 11pt;
+    }
+
+    #UsuariosConectados {
+        font-size: 10pt;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    body {
+        font-size: 12pt;
+    }
+
+    #UsuariosConectados {
+        font-size: 14pt;
+    }
+
+    ul {
+        list-style: none;
+        padding: 2px 12px;
+        font-weight: 600;
+    }
+
+    .groupIcon {
+        margin: 10px 0;
+        z-index: 999;
+    }
+
+    .hijos {
+        margin: 10px 0;
+        font-weight: 400;
+    }
+
+    .barraMenu {
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+        padding: 10px 0;
+        background-color: #5c70bd;
+    }
+
+        .barraMenu div {
+            float: left;
+            margin-right: 1em;
+        }
+
+    #User {
+        margin-top: 14px;
+        color: white;
+        font-size: 13pt;
+    }
+
+    .statusIcon {
+        width: 25px;
+        margin-top: 10px;
+        margin-left: 10px;
+        display: inline;
+    }
+
+    .statusChange {
+        width: 25px;
+        vertical-align: middle;
+        margin-top: 12px;
+        margin-left: -5px;
+        cursor: pointer;
+    }
+
+        .statusChange:hover {
+            background-color: white;
+        }
+
+    .statusSelect {
+        z-index: 9999;
+        position: fixed;
+        border: 1px solid #5c70bd;
+        color: white;
+        padding: 5px;
+        background-color: #5c70bd;
+        top: 70px;
+        left: 0;
+        width: 200px;
+        box-shadow: 1px 1px 2px grey;
+        font-weight: bold;
+    }
+
+    .statusThumb {
+        margin: 5px;
+        vertical-align: middle;
+    }
+
+    .statusSelect > div:hover {
+        background-color: lightgray;
+        color: black;
+        cursor: pointer;
+    }
+
+    #grupos {
+        z-index: 5;
+    }
+
+    .groupSelect {
+        width: 25px;
+        vertical-align: text-top;
+        padding: 0 2px;
+    }
+
+    .groupChildstatus {
+        width: 25px;
+        vertical-align: text-top;
+        padding: 0 10px;
+    }
+
+    #UsuariosConectados {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin-top: 50px;
+        width: 100%;
+        border: 1px solid blue;
+    }
+    /*Ventana del Chat*/
+    #chatWindow {
+        display: inline-block;
+    }
+
+    .mainChat {
+        background: url('../../imgs/chatBackground.png') no-repeat no-repeat;
+        background-size: cover;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        margin-top: 70px;
+        border: 1px solid black;
+    }
+
+    .chatMenu {
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background-color: #5c70bd;
+        padding: 10px 0;
+    }
+
+        .chatMenu div {
+            float: left;
+            vertical-align: middle;
+        }
+
+    .closeChat {
+        width: 30px;
+        margin: 5px;
+        float: right;
+    }
+
+    #chatOptions {
+        position: absolute;
+        bottom: 0;
+    }
+
+    #activeChat {
+        font-size: 12pt;
+        margin: -5px 0 0 5px;
+        float: left;
+        color: lightgray;
+    }
+
+    #activeStatus {
+        position: fixed;
+        float: left;
+        font-size: 10pt;
+        padding: 5px;
+        color: lightgray;
+    }
+
+    #chatMessages {
+        width: 100%;
+        height: 80%;
+        overflow-y: scroll;
+    }
+
+    #message:before {
+        content: 'div';
+        width: 15px;
+        height: 15px;
+        background-color: blue;
+    }
+
+    .bubbleRecived {
+        float: left;
+        margin: 5px;
+        width: 80%;
+        min-height: 50px;
+        max-height: 100%;
+        border: 1px solid blue;
+        clear: left;
+    }
+
+
+    .bubbleSend {
+        margin: 5px;
+        float: right;
+        width: 80%;
+        height: 100%;
+        right: 0;
+        height: 50px;
+        border: 1px solid blue;
+    }
+
+    .speech-bubble {
+        font-size: 10pt;
+        background-color: #f8f8f8;
+        border: 1px solid #c8c8c8;
+        border-radius: 5px;
+        width: 80%;
+        padding: 5px;
+        position: relative;
+        box-shadow: 1px 1px 2px grey;
+        clear: left;
+    }
+
+        .speech-bubble .arrow {
+            border-style: solid;
+            position: absolute;
+        }
+
+    .bottomleft {
+        border-color: #c8c8c8 transparent transparent transparent;
+        border-width: 8px 8px 0px 8px;
+        bottom: -8px;
+    }
+    .bottomright {
+        border-color: #c8c8c8 transparent transparent transparent;
+        border-width: 8px 8px 0px 8px;
+        bottom: -8px;
+        right: 5px;
+    }
+
+        .bottomleft:after {
+            border-color: #f8f8f8 transparent transparent transparent;
+            border-style: solid;
+            border-width: 7px 7px 0px 7px;
+            bottom: 1px;
+            content: "";
+            position: absolute;
+            left: -7px;
+        }
+        .bottomright:after {
+            border-color: #f8f8f8 transparent transparent transparent;
+            border-style: solid;
+            border-width: 7px 7px 0px 7px;
+            bottom: 1px;
+            content: "";
+            position: absolute;
+            right: -7px;
+        }
+
+    #message {
+        border-radius: 10px;
+        margin: 0 0 5px 5px;
+        box-shadow: 1px 1px 4px lightgrey;
+        font-size: 12pt;
+        position: fixed;
+        border: none;
+        resize: none;
+        bottom: 0;
+        left: 2px;
+        width: 75%;
+        height: 100px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: inline;
+    }
+
+    #sendMessage {
+        padding: 5px;
+        width: 60px;
+        position: fixed;
+        right: 5px;
+        bottom: 20px;
+        display: inline;
+        cursor: pointer;
+    }
+
+        #sendMessage:hover {
+            transition: 1s;
+            opacity: .7;
+        }
 }
